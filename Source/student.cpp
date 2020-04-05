@@ -16,4 +16,9 @@ Student::Student()
 	for (int i = 0; i < numDaysArraySize; i++) this->daysToCompleteCourse[i] = 0;
 	this->DegreeProgram = 0; /*Sub-Class??? Or Enum Array???*/
 
+	/********
+	NOTE: I might need to create a sub-class for the enum DegreeProgram or need
+	to use the degreeProgramArray to fix the setters, getters, and constructors
+	for the degree program
+	*/
 }
