@@ -13,7 +13,7 @@ public:
 	const static int numDaysArraySize = 3;
 
 	// Constructors
-	Student();
+	Student(); // Will set an empty roster with default values for all fields
 	Student(string studentID, string firstName, string lastName, string emailAddress, int age, int daysToCompleteCourse[], DegreeProgram degree);
 
 	// Accessor Funtions (Getters)
@@ -23,7 +23,7 @@ public:
 	string getEmailAddress();
 	int getAge();
 	int* getDaysToCompleteCourse();
-	DegreeProgram getDegreeProgram();
+	DegreeProgram getDegreeProgram(); /*Sub-Class??? Or Enum Array???*/
 
 	// Mutator Functions (Setters)
 	void setStudentID(string studentID);
@@ -32,7 +32,7 @@ public:
 	void setEmailAddress(string emailAddress);
 	void setAge(int age);
 	void setDaysToCompleteCourse(int daysToCompleteCourse[]);
-	void setDegreeProgram(DegreeProgram degree);
+	void setDegreeProgram(DegreeProgram degree); /*Sub-Class??? Or Enum Array???*/
 
 	// Print function to print specific student data to console
 	void print();
@@ -45,5 +45,8 @@ private:
 	string emailAddress;
 	int age;
 	int daysToCompleteCourse[numDaysArraySize];
-	DegreeProgram degree;
+	DegreeProgram degree; /*Sub-Class??? Or Enum Array???*/
+
+	// Destructor
+	~Student();
 };
