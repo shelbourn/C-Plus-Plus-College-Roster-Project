@@ -21,10 +21,11 @@ public:
 	void printInvalidEmails(); // Will locate and print student records with invalid email addresses
 	void printByDegreeProgram(DegreeProgram degree); // Prints all student records by a certain DegreeProgram value
 
-	~Roster(); // Destructor
+	// Destructor
+	~Roster();
 
 private:
 	int lastIndex; // Index of last student record in the roster (how many entries are in the roster)
-	int capacity; // Max size of the roster (how many records allowed)
-	Student** classRosterArray; // An array of pointers to the data in the student roster
+	int capacity; // Max size of the roster (Number of pointers in array. How many records allowed)
+	Student** classRosterArray; // classRosterArray is an array of pointers to the data in the student roster
 };

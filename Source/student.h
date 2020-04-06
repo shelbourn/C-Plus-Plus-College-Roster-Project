@@ -37,6 +37,9 @@ public:
 	// Print function to print specific student data to console
 	void print();
 
+	// Destructor
+	~Student();
+
 private:
 	// Declaring private variables
 	string studentID;
@@ -46,7 +49,4 @@ private:
 	int age;
 	int daysToCompleteCourse[numDaysArraySize];
 	DegreeProgram degree; /*Sub-Class??? Or Enum Array???*/
-
-	// Destructor
-	~Student();
 };
