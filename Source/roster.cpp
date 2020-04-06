@@ -32,10 +32,10 @@ void Roster::parseString(string record)
 		lastIndex++;
 
 		// Validates DegreeProgram in submitted string
-		DegreeProgram degree;
-		if (record.find("SECURITY") != string::npos) degree = DegreeProgram::SECURITY;
-		else if (record.find("NETWORK") != string::npos) degree = DegreeProgram::NETWORK;
-		else if (record.find("SOFTWARE") != string::npos) degree = DegreeProgram::SOFTWARE;
+		DegreeProgram degreeTemp;
+		if (record.find("SECURITY") != string::npos) degreeTemp = DegreeProgram::SECURITY;
+		else if (record.find("NETWORK") != string::npos) degreeTemp = DegreeProgram::NETWORK;
+		else if (record.find("SOFTWARE") != string::npos) degreeTemp = DegreeProgram::SOFTWARE;
 		else
 		{
 			cerr << "INVALID DEGREE PROGRAM ENTERED! EXITING PROGRAM!\n";
@@ -47,14 +47,52 @@ void Roster::parseString(string record)
 
 		// Extracting the Student ID
 		int rightSubStringEnd = record.find(",");
-		string studentID = record.substr(0, rightSubStringEnd);
+		string stuID = record.substr(0, rightSubStringEnd);
 
 		// Extracting First Name
 		int leftSubStringEnd = rightSubStringEnd + 1;
 		rightSubStringEnd = record.find(",", leftSubStringEnd);
-		string firstName = record.substr(leftSubStringEnd, rightSubStringEnd - leftSubStringEnd);
+		string fName = record.substr(leftSubStringEnd, rightSubStringEnd - leftSubStringEnd);
 
+		// Extracting Last Name
+		leftSubStringEnd = rightSubStringEnd + 1;
+		rightSubStringEnd = record.find(",", leftSubStringEnd);
+		string lName = record.substr(leftSubStringEnd, rightSubStringEnd - leftSubStringEnd);
 
+		// Extracting Email Address
+		leftSubStringEnd = rightSubStringEnd + 1;
+		rightSubStringEnd = record.find(",", leftSubStringEnd);
+		string email = record.substr(leftSubStringEnd, rightSubStringEnd - leftSubStringEnd);
 
+		// Extracting Age
+		leftSubStringEnd = rightSubStringEnd + 1;
+		rightSubStringEnd = record.find(",", leftSubStringEnd);
+		int ageTemp = stod(record.substr(leftSubStringEnd, rightSubStringEnd - leftSubStringEnd));
+
+		// Extracting each value for daysInCourse
+		// daysInCourse1
+		leftSubStringEnd = rightSubStringEnd + 1;
+		rightSubStringEnd = record.find(",", leftSubStringEnd);
+		int daysInCourse1 = stod(record.substr(leftSubStringEnd, rightSubStringEnd - leftSubStringEnd));
+
+		// daysInCourse2
+		leftSubStringEnd = rightSubStringEnd + 1;
+		rightSubStringEnd = record.find(",", leftSubStringEnd);
+		int daysInCourse2 = stod(record.substr(leftSubStringEnd, rightSubStringEnd - leftSubStringEnd));
+
+		// daysInCourse3
+		leftSubStringEnd = rightSubStringEnd + 1;
+		rightSubStringEnd = record.find(",", leftSubStringEnd);
+		int daysInCourse3 = stod(record.substr(leftSubStringEnd, rightSubStringEnd - leftSubStringEnd));
+
+		// Adding all the parsed student data as a record in the roster
+		add(stuID, fName, lName, email, ageTemp, daysInCourse1, daysInCourse2, daysInCourse3, degreeTemp);
+	}
+
+	// Exit program if roster capacity is exceeded
+	else
+	{
+		cerr << "ERROR!! THE STUDENT ROSTER HAS EXCEEDED ITS MAXIMUM CAPACITY!\n EXITING NOW!";
+		exit(-1);
 	}
 }

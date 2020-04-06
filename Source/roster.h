@@ -14,12 +14,12 @@ public:
 	Student* getStudentRecordAt(int index);
 
 	void parseString(string studentRecord); // Parses string, creates Student object, adds record to roster
-	void add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysToComplete1, int daysToComplete2, int daysToComplete3, DegreeProgram degree);
+	void add(string stuID, string fName, string lName, string email, int ageTemp, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeTemp);
 	bool remove(string studentID); // Removes a student record based on studentID
 	void printAll(); // Prints all student records in the roster
 	void printAverageDaysInCourse(string studentID); // Prints a certain student's average time to complete a course
 	void printInvalidEmails(); // Will locate and print student records with invalid email addresses
-	void printByDegreeProgram(DegreeProgram degree); // Prints all student records by a certain DegreeProgram value
+	void printByDegreeProgram(DegreeProgram deg); // Prints all student records by a certain DegreeProgram value
 
 	// Destructor
 	~Roster();
