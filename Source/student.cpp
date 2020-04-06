@@ -122,3 +122,9 @@ void Student::print()
 	cout << left << setw(4) << daysToCompleteCourse[2];
 	cout << left << setw(12) << degreeProgramArray[degree]; // Need to fix this
 }
+
+// Defining the destructor function for Student
+Student::~Student()
+{
+
+}
