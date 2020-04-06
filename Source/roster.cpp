@@ -33,9 +33,9 @@ void Roster::parseString(string record)
 
 		// Validates DegreeProgram in submitted string
 		DegreeProgram degree;
-		if (record[6] == 'SE') degree = DegreeProgram::SECURITY;
-		else if (record[6] == 'NE') degree = DegreeProgram::NETWORK;
-		else if (record[6] == 'SO') degree = DegreeProgram::SOFTWARE;
+		if (record.find("SECURITY") != string::npos) degree = DegreeProgram::SECURITY;
+		else if (record.find("NETWORK") != string::npos) degree = DegreeProgram::NETWORK;
+		else if (record.find("SOFTWARE") != string::npos) degree = DegreeProgram::SOFTWARE;
 		else
 		{
 			cerr << "INVALID DEGREE PROGRAM ENTERED! EXITING PROGRAM!\n";
@@ -53,6 +53,7 @@ void Roster::parseString(string record)
 		int leftSubStringEnd = rightSubStringEnd + 1;
 		rightSubStringEnd = record.find(",", leftSubStringEnd);
 		string firstName = record.substr(leftSubStringEnd, rightSubStringEnd - leftSubStringEnd);
+
 
 
 	}
