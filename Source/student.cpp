@@ -22,3 +22,15 @@ Student::Student()
 	for the degree program
 	*/
 }
+
+// Full constructor to build out student roster line entry
+Student::Student(string studentID, string firstName, string lastName, string emailAddress, int age, int daysToCompleteCourse[], DegreeProgram degree)
+{
+	this->studentID = studentID;
+	this->firstName = firstName;
+	this->lastName = lastName;
+	this->emailAddress = emailAddress;
+	this->age = age;
+	for (int i = 0; i < numDaysArraySize; i++) this->daysToCompleteCourse[i] = daysToCompleteCourse[i];
+	this->DegreeProgram = degree; /*Sub-Class??? Or Enum Array???*/
+}
