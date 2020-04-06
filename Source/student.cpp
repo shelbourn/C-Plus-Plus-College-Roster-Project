@@ -120,7 +120,7 @@ string degreeProgramPrint(DegreeProgram degree) {
 	case DegreeProgram::SOFTWARE:
 		return "SOFTWARE";
 	default:
-		return "Invalid Degree";
+		return "NONE SPECIFIED";
 	}
 }
 
