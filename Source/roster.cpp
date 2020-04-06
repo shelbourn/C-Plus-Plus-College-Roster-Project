@@ -38,7 +38,7 @@ void Roster::parseString(string record)
 		else if (record.find("SOFTWARE") != string::npos) degreeTemp = DegreeProgram::SOFTWARE;
 		else
 		{
-			cerr << "INVALID DEGREE PROGRAM ENTERED! EXITING PROGRAM!\n";
+			cerr << "INVALID DEGREE PROGRAM ENTERED! PROGRAM TERMINATED!\n";
 			exit(-1);
 		}
 
@@ -92,7 +92,23 @@ void Roster::parseString(string record)
 	// Exit program if roster capacity is exceeded
 	else
 	{
-		cerr << "ERROR!! THE STUDENT ROSTER HAS EXCEEDED ITS MAXIMUM CAPACITY!\n EXITING NOW!";
+		cerr << "ERROR!! THE STUDENT ROSTER HAS EXCEEDED ITS MAXIMUM CAPACITY!\n PROGRAM TERMINATED!";
 		exit(-1);
 	}
+}
+
+// Defining the add() method
+void Roster::add(string stuID, string fName, string lName, string email, int ageTemp, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeTemp)
+{
+	// Creating an array for the number of days in course
+	int daysInCourseArray[Student::numDaysArraySize];
+	daysInCourseArray[0] = daysInCourse1;
+	daysInCourseArray[1] = daysInCourse2;
+	daysInCourseArray[2] = daysInCourse3;
+}
+
+// Defining printAll() method
+void Roster::printAll()
+{
+	for (int i = 0; i <= this->lastIndex; i++) (this->classRosterArray)[i]->print();
 }
