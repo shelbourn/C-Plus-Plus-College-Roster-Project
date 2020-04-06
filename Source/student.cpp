@@ -5,6 +5,7 @@
 using std::cout;
 using std::left;
 using std::setw;
+using namespace::std;
 
 //Empty constructor to set fields to default values
 Student::Student()
@@ -109,6 +110,20 @@ void Student::setDegreeProgram(DegreeProgram degree)
 	this->degree = degree;
 }
 
+// Defining the print() function for DegreeProgram
+string degreeProgramPrint(DegreeProgram degree) {
+	switch (degree) {
+	case DegreeProgram::SECURITY:
+		return "SECURITY";
+	case DegreeProgram::NETWORK:
+		return "NETWORK";
+	case DegreeProgram::SOFTWARE:
+		return "SOFTWARE";
+	default:
+		return "Invalid Degree";
+	}
+}
+
 // Defining the print() function to print all fields to the console
 void Student::print()
 {
@@ -120,8 +135,9 @@ void Student::print()
 	cout << left << setw(4) << daysToCompleteCourse[0];
 	cout << left << setw(4) << daysToCompleteCourse[1];
 	cout << left << setw(4) << daysToCompleteCourse[2];
-	cout << left << setw(12) << degreeProgramArray[degree]; // Need to fix this
+	cout << left << setw(12) << degreeProgramPrint; // Does this work???
 }
+
 
 // Defining the destructor function for Student
 Student::~Student()
