@@ -108,3 +108,17 @@ void Student::setDegreeProgram(DegreeProgram degree)
 {
 	this->degree = degree;
 }
+
+// Defining the print() function to print all fields to the console
+void Student::print()
+{
+	cout << left << setw(5) << studentID;
+	cout << left << setw(15) << firstName;
+	cout << left << setw(15) << lastName;
+	cout << left << setw(35) << emailAddress;
+	cout << left << setw(3) << age;
+	cout << left << setw(4) << daysToCompleteCourse[0];
+	cout << left << setw(4) << daysToCompleteCourse[1];
+	cout << left << setw(4) << daysToCompleteCourse[2];
+	cout << left << setw(12) << degreeProgramArray[degree]; // Need to fix this
+}
