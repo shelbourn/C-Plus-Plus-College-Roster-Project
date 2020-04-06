@@ -1,5 +1,5 @@
 #pragma once
-#include <degree.h>
+#include "degree.h"
 #include <string>
 using std::string;
 
