@@ -13,12 +13,18 @@ public:
 
 	Student* getStudentRecordAt(int index);
 
-	void parseStringAdd(string studentRecord); // Parses string, creates Student object, adds record to roster
-	void addStudentRecord(string studentID, string firstName, string lastName, string emailAddress, int age, int daysToComplete1, int daysToComplete2, int daysToComplete3, DegreeProgram degree);
-	void printAllRecords(); // Prints all student records in the roster
-	bool removeStudentRecord(string studentID); // Removes a student record based on studentID
+	void parseString(string studentRecord); // Parses string, creates Student object, adds record to roster
+	void add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysToComplete1, int daysToComplete2, int daysToComplete3, DegreeProgram degree);
+	bool remove(string studentID); // Removes a student record based on studentID
+	void printAll(); // Prints all student records in the roster
+	void printAverageDaysInCourse(string studentID); // Prints a certain student's average time to complete a course
+	void printInvalidEmails(); // Will locate and print student records with invalid email addresses
+	void printByDegreeProgram(DegreeProgram degree); // Prints all student records by a certain DegreeProgram value
 
+	~Roster(); // Destructor
 
 private:
-
+	int lastIndex; // Index of last student record in the roster (how many entries are in the roster)
+	int capacity; // Max size of the roster (how many records allowed)
+	Student** classRosterArray; // An array of pointers to the data in the student roster
 };
