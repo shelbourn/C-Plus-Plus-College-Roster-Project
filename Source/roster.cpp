@@ -2,6 +2,7 @@
 #include "degree.h"
 using std::cout;
 using std::cerr;
+using namespace std;
 
 // Defining the empty roster constructor -- sets fields to default values
 Roster::Roster()
@@ -65,36 +66,36 @@ void Roster::parseString(string record)
 		rightSubStringEnd = record.find(",", leftSubStringEnd);
 		string email = record.substr(leftSubStringEnd, rightSubStringEnd - leftSubStringEnd);
 
-		// Extracting Age
-		leftSubStringEnd = rightSubStringEnd + 1;
-		rightSubStringEnd = record.find(",", leftSubStringEnd);
-		int ageTemp = stod(record.substr(leftSubStringEnd, rightSubStringEnd - leftSubStringEnd));
+// Extracting Age
+leftSubStringEnd = rightSubStringEnd + 1;
+rightSubStringEnd = record.find(",", leftSubStringEnd);
+int ageTemp = stod(record.substr(leftSubStringEnd, rightSubStringEnd - leftSubStringEnd));
 
-		// Extracting each value for daysInCourse
-		// daysInCourse1
-		leftSubStringEnd = rightSubStringEnd + 1;
-		rightSubStringEnd = record.find(",", leftSubStringEnd);
-		int daysInCourse1 = stod(record.substr(leftSubStringEnd, rightSubStringEnd - leftSubStringEnd));
+// Extracting each value for daysInCourse
+// daysInCourse1
+leftSubStringEnd = rightSubStringEnd + 1;
+rightSubStringEnd = record.find(",", leftSubStringEnd);
+int daysInCourse1 = stod(record.substr(leftSubStringEnd, rightSubStringEnd - leftSubStringEnd));
 
-		// daysInCourse2
-		leftSubStringEnd = rightSubStringEnd + 1;
-		rightSubStringEnd = record.find(",", leftSubStringEnd);
-		int daysInCourse2 = stod(record.substr(leftSubStringEnd, rightSubStringEnd - leftSubStringEnd));
+// daysInCourse2
+leftSubStringEnd = rightSubStringEnd + 1;
+rightSubStringEnd = record.find(",", leftSubStringEnd);
+int daysInCourse2 = stod(record.substr(leftSubStringEnd, rightSubStringEnd - leftSubStringEnd));
 
-		// daysInCourse3
-		leftSubStringEnd = rightSubStringEnd + 1;
-		rightSubStringEnd = record.find(",", leftSubStringEnd);
-		int daysInCourse3 = stod(record.substr(leftSubStringEnd, rightSubStringEnd - leftSubStringEnd));
+// daysInCourse3
+leftSubStringEnd = rightSubStringEnd + 1;
+rightSubStringEnd = record.find(",", leftSubStringEnd);
+int daysInCourse3 = stod(record.substr(leftSubStringEnd, rightSubStringEnd - leftSubStringEnd));
 
-		// Adding all the parsed student data as a record in the roster
-		add(stuID, fName, lName, email, ageTemp, daysInCourse1, daysInCourse2, daysInCourse3, degreeTemp);
+// Adding all the parsed student data as a record in the roster
+add(stuID, fName, lName, email, ageTemp, daysInCourse1, daysInCourse2, daysInCourse3, degreeTemp);
 	}
 
 	// Exit program if roster capacity is exceeded
 	else
 	{
-		cerr << "ERROR!! THE STUDENT ROSTER HAS EXCEEDED ITS MAXIMUM CAPACITY!\n PROGRAM TERMINATED!";
-		exit(-1);
+	cerr << "ERROR!! THE STUDENT ROSTER HAS EXCEEDED ITS MAXIMUM CAPACITY!\n PROGRAM TERMINATED!";
+	exit(-1);
 	}
 }
 
@@ -157,3 +158,23 @@ void Roster::printAverageDaysInCourse(string studentID)
 	}
 	if (!found) cout << "Student with ID " << studentID << " not found!" << "\n";
 }
+
+// Defining printInvalidEmails() method
+void Roster::printInvalidEmails()
+{
+	cout << "Students with invalid email addresses in roster:\n";
+	bool any = false;
+	for (int i = 0; i <= lastIndex; i++)
+	{
+		// *** Check to see if the line below works or not
+		if (classRosterArray[i]->getEmailAddress().find(".") == string::npos || classRosterArray[i]->getEmailAddress().find("@") == string::npos)
+		{
+			any = true;
+			cout << "Student ID: " << classRosterArray[i]->getStudentID();
+			cout << " -- " << "Email Address: " << classRosterArray[i]->getEmailAddress();
+		}
+		if (any) cout << "\n";
+	}
+	if (!any) cout << "No students with invalid email addresses in roster.";
+}
+
