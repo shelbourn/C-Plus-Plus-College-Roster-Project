@@ -110,18 +110,28 @@ void Student::setDegreeProgram(DegreeProgram degree)
 	this->degree = degree;
 }
 
-// Defining the print() function for DegreeProgram
+// Converting the DegreeProgram value to a string for printing
 string degreeProgramPrint(DegreeProgram degree) {
+	string degreeResult;
 	switch (degree) {
+
 	case DegreeProgram::SECURITY:
-		return "SECURITY";
+		degreeResult = "SECURITY";
+		break;
+
 	case DegreeProgram::NETWORK:
-		return "NETWORK";
+		degreeResult = "NETWORK";
+		break;
+
 	case DegreeProgram::SOFTWARE:
-		return "SOFTWARE";
+		degreeResult = "SOFTWARE";
+		break;
+
 	default:
-		return "NONE SPECIFIED";
+		degreeResult = "NONE SPECIFIED";
+		break;
 	}
+	return degreeResult;
 }
 
 // Defining the print() function to print all fields to the console
@@ -132,10 +142,10 @@ void Student::print()
 	cout << left << setw(15) << lastName;
 	cout << left << setw(35) << emailAddress;
 	cout << left << setw(3) << age;
-	cout << left << setw(4) << daysToCompleteCourse[0];
+	cout << left << setw(4) << daysToCompleteCourse[0]; // *** Make sure that commas separate values here
 	cout << left << setw(4) << daysToCompleteCourse[1];
 	cout << left << setw(4) << daysToCompleteCourse[2];
-	cout << left << setw(12) << degreeProgramPrint; // Does this work???
+	cout << left << setw(12) << degreeProgramPrint << "\n"; // Does this work???
 }
 
 

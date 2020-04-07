@@ -1,4 +1,5 @@
 #include "roster.h"
+#include "degree.h"
 using std::cout;
 using std::cerr;
 
@@ -107,8 +108,30 @@ void Roster::add(string stuID, string fName, string lName, string email, int age
 	daysInCourseArray[2] = daysInCourse3;
 }
 
-// Defining printAll() method
+// Defining printAll() method using for loop
 void Roster::printAll()
 {
 	for (int i = 0; i <= this->lastIndex; i++) (this->classRosterArray)[i]->print();
+}
+
+// Defining remove() method to remove student record by studentID
+bool Roster::remove(string studentID)
+{
+	bool found = false; // Initializes found variable to false
+	for (int i = 0; i <= lastIndex; i++)
+	{
+		// Checks whether the Student ID exists in roster
+		if (this->classRosterArray[i]->getStudentID() == studentID)
+		{
+			// If Student ID exists in roster then remove (delete) it
+			found = true;
+			delete this->classRosterArray[i];
+
+			// Replaces record at deleted index with record at last index
+			this->classRosterArray[i] = this->classRosterArray[lastIndex];
+
+			// Shrinks the roster by one record
+			lastIndex--;
+		}
+	}
 }
