@@ -110,6 +110,7 @@ void Student::setDegreeProgram(DegreeProgram degree)
 	this->degree = degree;
 }
 
+/************* May need to move this to the student.h file */
 // Converting the DegreeProgram value to a string for printing
 string degreeProgramPrint(DegreeProgram degree) {
 	string degreeResult;
@@ -145,7 +146,7 @@ void Student::print()
 	cout << left << setw(4) << daysToCompleteCourse[0]; // *** Make sure that commas separate values here
 	cout << left << setw(4) << daysToCompleteCourse[1];
 	cout << left << setw(4) << daysToCompleteCourse[2];
-	cout << left << setw(12) << degreeProgramPrint << "\n"; // Does this work???
+	cout << left << setw(12) << degreeProgramPrint(degree) << "\n"; // Does this work???
 }
 
 

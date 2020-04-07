@@ -185,5 +185,14 @@ void Roster::printInvalidEmails()
 }
 
 // Defining printByDegreeProgram() method
+void Roster::printByDegreeProgram(DegreeProgram degree)
+{
+	// ****Hopefully the casting performed in main.cpp will fix this
+	cout << "Printing all student records for the " << degreeProgramArray[degree] << " degree program." << "\n";
+	for (int i = 0; i <= lastIndex; i++)
+	{
+		if (this->classRosterArray[i]->getDegreeProgram() == degree) this->classRosterArray[i]->print();
+	}
+}
 
 // Defining destructor for Roster
