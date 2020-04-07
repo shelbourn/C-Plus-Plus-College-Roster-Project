@@ -1,5 +1,6 @@
 #include "roster.h"
 #include "degree.h"
+#include "student.h"
 using std::cout;
 using std::cerr;
 using namespace std;

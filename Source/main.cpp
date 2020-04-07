@@ -1,6 +1,7 @@
 #include "roster.h"
 #include "degree.h"
 #include "student.h"
+#include <string>
 using std::cout;
 using std::cerr;
 using namespace std;
@@ -40,7 +41,7 @@ int main()
 	cout << "\n";
 	cout << "ENJOY! =)\n";
 
-	// Data to be parsed, printed, and acted upon
+	// Data to be parsed and utilized in program
 	const string studentData[5] =
 	{
 	"A1,John,Smith,John1989@gm ail.com,20,30,35,40,SECURITY",
@@ -59,6 +60,43 @@ int main()
 	{
 		classRoster->parseString(studentData[i]);
 	}
+	cout << "PROCESS COMPLETE!\n";
+
+	// Printing all students in classRoster
+	cout << "List of all students currently in the student roster:\n";
+	classRoster->printAll();
+
+	// Printing any invalid emails in classRoster
+	cout << "List of all student records with invalid email addresses:\n";
+	classRoster->printInvalidEmails();
+
+	// Printing average days a student spends in a course using a loop
+	cout << "Now printing the average number of days each student spends in a course:\n";
+	for (int i = 0; i < numStudentRecords; i++)
+	{
+		classRoster->printAverageDaysInCourse(classRoster->getStudentRecordAt(i)->getStudentID());
+	}
+
+	// Printing student records by DegreeProgram
+	for (int i = 0; i < 3; i++) classRoster->printByDegreeProgram((DegreeProgram)i);
+
+	// Removing a student record by studentID and printing the resulting classRoster
+	cout << "Now removing student record associated with Student ID - A3:\n";
+	if (classRoster->remove("A3"))
+	{
+		classRoster->printAll();
+		numStudentRecords--;
+	}
+	else cout << "A student with this ID was not found!\n";
+
+	// Removing the student record with the same studentID as above to test error message
+	cout << "Now attempting to remove student record A3 agein:\n";
+	if (classRoster->remove("A3"))
+	{
+		classRoster->printAll();
+		numStudentRecords--;
+	}
+	else cout << "A student with this ID was not found!\n";
 
 	return 0;
 }
