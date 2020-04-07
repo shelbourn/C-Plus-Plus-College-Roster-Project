@@ -167,11 +167,13 @@ void Roster::printInvalidEmails()
 	for (int i = 0; i <= lastIndex; i++)
 	{
 		// Not sure why the line below throws an error
+		// Initializing a string pointer probably isn't necessary this function only has 1 loop scope
+
 		//string* email = classRosterArray[i]->getEmailAddress();
 
 		// *** Check to see if the line below works or not
 		// Searches each email address string for "." or "@"
-		if (this->classRosterArray[i]->getEmailAddress().find(".") == string::npos || classRosterArray[i]->getEmailAddress().find("@") == string::npos)
+		if (this->classRosterArray[i]->getEmailAddress().find(".") == string::npos || this->classRosterArray[i]->getEmailAddress().find("@") == string::npos)
 		{
 			any = true;
 			cout << "Student ID: " << classRosterArray[i]->getStudentID();
