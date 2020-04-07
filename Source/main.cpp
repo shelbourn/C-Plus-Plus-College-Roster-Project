@@ -13,11 +13,32 @@ int main()
 	// Setting the number of student records
 	int numStudentRecords = 5;
 
-	// Setting user data variables to be used in first line of output
+	// Setting user data variables to print info relating to the user of program
 	const string courseTitle = "C867: Scripting & Programming - Applications";
 	const string programmingLanguage = "C++";
 	const string wGUStudentID = "001059665";
 	const string userName = "Matthew Shelbourn";
+
+	// Welcome message
+	cout << "Hi there!" << "My name is " << userName << " and my WGU Student ID number is " << wGUStudentID << ". " << "\n";
+	cout << "This program is the finished product of a course project for " << courseTitle << "." << "\n";
+	cout << "This program was built using the tried and true programming language " << programmingLanguage << "." << "\n";
+	cout << "It will demonstrate how several C++ components can be implemented to create a console program.\n";
+	cout << "These components include, but are not limited to:\n";
+	cout << "Setters\n";
+	cout << "Getters\n";
+	cout << "Methods\n";
+	cout << "Functions\n";
+	cout << "Loops\n";
+	cout << "Pointers\n";
+	cout << "Console Printing\n";
+	cout << "Use of Enumerated Data Types\n";
+	cout << "Classes\n";
+	cout << "Scoping\n";
+	cout << "Error Handling\n";
+	cout << "And Much More!!!\n";
+	cout << "\n";
+	cout << "ENJOY! =)\n";
 
 	// Data to be parsed, printed, and acted upon
 	const string studentData[5] =
@@ -29,5 +50,6 @@ int main()
 	"A5,Matthew,Shelbourn,mshelbo@wgu.edu,39, 47,13,26,SOFTWARE"
 	};
 
-
+	// Creating an instance of the roster named classRoster
+	Roster* classRoster = new Roster(numStudentRecords);
 }
