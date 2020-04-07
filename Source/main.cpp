@@ -53,5 +53,12 @@ int main()
 	// Creating an instance of the roster named classRoster
 	Roster* classRoster = new Roster(numStudentRecords);
 
+	// Parsing and adding student records to classRoster
+	cout << "Now parsing student data and adding records to the student roster:\t";
+	for (int i = 0; i < numStudentRecords; i++)
+	{
+		classRoster->parseString(studentData[i]);
+	}
+
 	return 0;
 }
