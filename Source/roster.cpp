@@ -173,7 +173,9 @@ void Roster::printInvalidEmails()
 
 		// *** Check to see if the line below works or not
 		// Searches each email address string for "." or "@"
-		if (this->classRosterArray[i]->getEmailAddress().find(".") == string::npos || this->classRosterArray[i]->getEmailAddress().find("@") == string::npos)
+		if (this->classRosterArray[i]->getEmailAddress().find(".") == string::npos 
+			|| this->classRosterArray[i]->getEmailAddress().find("@") == string::npos 
+			|| this->classRosterArray[i]->getEmailAddress().find(" ") != string::npos)
 		{
 			any = true;
 			cout << "Student ID: " << classRosterArray[i]->getStudentID();
@@ -188,11 +190,22 @@ void Roster::printInvalidEmails()
 void Roster::printByDegreeProgram(DegreeProgram degree)
 {
 	// ****Hopefully the casting performed in main.cpp will fix this
-	cout << "Printing all student records for the " << degreeProgramArray[degree] << " degree program." << "\n";
+	cout << "Printing all student records for the " << degreeProgramArray[degree] << " degree program:" << "\n";
 	for (int i = 0; i <= lastIndex; i++)
 	{
 		if (this->classRosterArray[i]->getDegreeProgram() == degree) this->classRosterArray[i]->print();
 	}
 }
 
-// Defining destructor for Roster
+// Defining destructor for Roster -- THIS DESTROYS ALL STUDENT RECORDS!!!
+Roster::~Roster()
+{
+	// Deletes each student record one-by-one with loop
+	for (int i = 0; i <= lastIndex; i++)
+	{
+		delete this->classRosterArray[i];
+	}
+
+	// Deletes the array of pointers to the student records
+	delete classRosterArray;
+}
