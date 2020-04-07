@@ -166,8 +166,12 @@ void Roster::printInvalidEmails()
 	bool any = false;
 	for (int i = 0; i <= lastIndex; i++)
 	{
+		// Not sure why the line below throws an error
+		//string* email = classRosterArray[i]->getEmailAddress();
+
 		// *** Check to see if the line below works or not
-		if (classRosterArray[i]->getEmailAddress().find(".") == string::npos || classRosterArray[i]->getEmailAddress().find("@") == string::npos)
+		// Searches each email address string for "." or "@"
+		if (this->classRosterArray[i]->getEmailAddress().find(".") == string::npos || classRosterArray[i]->getEmailAddress().find("@") == string::npos)
 		{
 			any = true;
 			cout << "Student ID: " << classRosterArray[i]->getStudentID();
