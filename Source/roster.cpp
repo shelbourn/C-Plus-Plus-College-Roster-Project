@@ -108,12 +108,6 @@ void Roster::add(string stuID, string fName, string lName, string email, int age
 	daysInCourseArray[2] = daysInCourse3;
 }
 
-// Defining printAll() method using for loop
-void Roster::printAll()
-{
-	for (int i = 0; i <= this->lastIndex; i++) (this->classRosterArray)[i]->print();
-}
-
 // Defining remove() method to remove student record by studentID
 bool Roster::remove(string studentID)
 {
@@ -133,5 +127,33 @@ bool Roster::remove(string studentID)
 			// Shrinks the roster by one record
 			lastIndex--;
 		}
+		else
+		{
+			cerr << "ERROR! A STUDENT WITH THIS ID DOES NOT EXIST IN THE ROSTER!" << "\n";
+		}
 	}
+	return found;
+}
+
+// Defining printAll() method using for loop
+void Roster::printAll()
+{
+	for (int i = 0; i <= this->lastIndex; i++) (this->classRosterArray)[i]->print();
+}
+
+// Defining the printAverageDaysInCourse() method
+void Roster::printAverageDaysInCourse(string studentID)
+{
+	bool found = false;
+	for (int i = 0; i <= lastIndex; i++)
+	{
+		// Validates studentID exists in roster
+		if (this->classRosterArray[i]->getStudentID() == studentID)
+		{
+			found = true;
+			int* days = classRosterArray[i]->getDaysToCompleteCourse();
+			cout << "The average number of days to complete a course for student with ID " << studentID << " is " << days[0] + days[1] + days[2] / 3 << "/n";
+		}
+	}
+	if (!found) cout << "Student with ID " << studentID << " not found!" << "\n";
 }
