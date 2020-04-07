@@ -182,3 +182,6 @@ void Roster::printInvalidEmails()
 	if (!any) cout << "No students with invalid email addresses in roster.";
 }
 
+// Defining printByDegreeProgram() method
+
+// Defining destructor for Roster
