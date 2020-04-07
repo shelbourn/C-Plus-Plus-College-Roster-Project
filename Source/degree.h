@@ -1,5 +1,5 @@
 #pragma once
-#include <string>;
+#include <string>
 
 // Initializing enumerated data type values for the Degree Programs
 enum class DegreeProgram { SECURITY, NETWORK, SOFTWARE };

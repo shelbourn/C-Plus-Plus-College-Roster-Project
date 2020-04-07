@@ -52,4 +52,6 @@ int main()
 
 	// Creating an instance of the roster named classRoster
 	Roster* classRoster = new Roster(numStudentRecords);
+
+	return 0;
 }

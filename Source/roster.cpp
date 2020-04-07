@@ -69,23 +69,23 @@ void Roster::parseString(string record)
 // Extracting Age
 leftSubStringEnd = rightSubStringEnd + 1;
 rightSubStringEnd = record.find(",", leftSubStringEnd);
-int ageTemp = stod(record.substr(leftSubStringEnd, rightSubStringEnd - leftSubStringEnd));
+int ageTemp = stoi(record.substr(leftSubStringEnd, rightSubStringEnd - leftSubStringEnd));
 
 // Extracting each value for daysInCourse
 // daysInCourse1
 leftSubStringEnd = rightSubStringEnd + 1;
 rightSubStringEnd = record.find(",", leftSubStringEnd);
-int daysInCourse1 = stod(record.substr(leftSubStringEnd, rightSubStringEnd - leftSubStringEnd));
+int daysInCourse1 = stoi(record.substr(leftSubStringEnd, rightSubStringEnd - leftSubStringEnd));
 
 // daysInCourse2
 leftSubStringEnd = rightSubStringEnd + 1;
 rightSubStringEnd = record.find(",", leftSubStringEnd);
-int daysInCourse2 = stod(record.substr(leftSubStringEnd, rightSubStringEnd - leftSubStringEnd));
+int daysInCourse2 = stoi(record.substr(leftSubStringEnd, rightSubStringEnd - leftSubStringEnd));
 
 // daysInCourse3
 leftSubStringEnd = rightSubStringEnd + 1;
 rightSubStringEnd = record.find(",", leftSubStringEnd);
-int daysInCourse3 = stod(record.substr(leftSubStringEnd, rightSubStringEnd - leftSubStringEnd));
+int daysInCourse3 = stoi(record.substr(leftSubStringEnd, rightSubStringEnd - leftSubStringEnd));
 
 // Adding all the parsed student data as a record in the roster
 add(stuID, fName, lName, email, ageTemp, daysInCourse1, daysInCourse2, daysInCourse3, degreeTemp);
