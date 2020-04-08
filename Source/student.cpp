@@ -5,7 +5,6 @@
 using std::cout;
 using std::left;
 using std::setw;
-using namespace::std;
 
 //Empty constructor to set fields to default values
 Student::Student()

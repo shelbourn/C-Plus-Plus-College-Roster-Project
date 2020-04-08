@@ -4,7 +4,6 @@
 #include <cstddef>
 using std::cout;
 using std::cerr;
-using namespace std;
 
 // Defining the empty roster constructor -- sets fields to default values
 Roster::Roster()

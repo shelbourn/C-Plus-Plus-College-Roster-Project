@@ -5,7 +5,6 @@
 #include <string>
 using std::cout;
 using std::cerr;
-using namespace std;
 
 // Defining main program operations
 // Supplying data, calling functions/methods, demonstrating functionality, releasing allocated memory with destructor
@@ -41,6 +40,9 @@ int main()
 	cout << "And Much More!!!\n";
 	cout << "\n";
 	cout << "ENJOY! =)\n\n";
+	cout << "Press any key to begin program execution.\n\n";
+
+	system("pause");
 
 	// Data to be parsed and utilized in program
 	const string studentData[5] =
@@ -53,7 +55,9 @@ int main()
 	};
 
 	// Creating an instance of the roster named classRoster
+	cout << "Creating an instance of the Class Roster to be used in this session.\n\n";
 	Roster* classRoster = new Roster(numStudentRecords);
+	cout << "PROCESS COMPLETE!\n\n";
 
 	// Parsing and adding student records to classRoster
 	cout << "Now parsing student data and adding records to the student roster:\t";
