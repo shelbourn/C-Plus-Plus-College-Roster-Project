@@ -17,6 +17,7 @@ private:
 	/***** REQUIREMENT E.1 */
 	Student** classRosterArray; // classRosterArray is an array of pointers to the data in the student roster
 
+	/***** REQUIREMENT E.3 */
 public:
 	Roster(); // Empty constructor to set the Roster to default values
 	Roster(int capacity); // Sets the max size (number of records) for the Roster
@@ -31,6 +32,6 @@ public:
 	void printInvalidEmails(); // Will locate and print student records with invalid email addresses
 	void printByDegreeProgram(DegreeProgram degree); // Prints all student records by a certain DegreeProgram value
 
-	// Destructor with confirmation message that it was called
+	// Destructor for Roster
 	~Roster();
 };

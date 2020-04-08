@@ -30,6 +30,8 @@ Student* Roster::getStudentRecordAt(int index)
 	return classRosterArray[index];
 }
 
+/***** REQUIREMENT E.2 */
+/***** REQUIREMENT E.2.a */
 // Parse string data and add it to roster
 void Roster::parseString(string record)
 {
@@ -102,6 +104,9 @@ void Roster::parseString(string record)
 	}
 }
 
+/***** REQUIREMENT E.2 */
+/***** REQUIREMENT E.2.b */
+/***** REQUIREMENT E.3.a */
 // Defining the add() method
 void Roster::add(string stuID, string fName, string lName, string email, int ageTemp, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeTemp)
 {
@@ -111,13 +116,12 @@ void Roster::add(string stuID, string fName, string lName, string email, int age
 	daysInCourseArray[1] = daysInCourse2;
 	daysInCourseArray[2] = daysInCourse3;
 
-	/********* May need to fix this for printing degree type */
-
 	// Adding a student record for each parsed record
 	classRosterArray[lastIndex] = new Student(stuID, fName, lName, email, ageTemp, daysInCourseArray, degreeTemp);
 
 }
 
+/***** REQUIREMENT E.3.b */
 // Defining remove() method to remove student record by studentID
 bool Roster::remove(string studentID)
 {
@@ -137,22 +141,18 @@ bool Roster::remove(string studentID)
 			// Shrinks the roster by one record
 			lastIndex--;
 		}
-		/*
-		else
-		{
-			cerr << "ERROR! A STUDENT WITH THIS ID DOES NOT EXIST IN THE ROSTER!" << "\n";
-		}
-		*/
 	}
 	return found;
 }
 
+/***** REQUIREMENT E.3.c */
 // Defining printAll() method using for loop
 void Roster::printAll()
 {
 	for (int i = 0; i <= this->lastIndex; i++) (this->classRosterArray)[i]->print();
 }
 
+/***** REQUIREMENT E.3.d */
 // Defining the printAverageDaysInCourse() method
 void Roster::printAverageDaysInCourse(string studentID)
 {
@@ -170,6 +170,7 @@ void Roster::printAverageDaysInCourse(string studentID)
 	if (!found) cout << "Student with ID " << studentID << " not found!" << "\n\n";
 }
 
+/***** REQUIREMENT E.3.e */
 // Defining printInvalidEmails() method
 void Roster::printInvalidEmails()
 {
@@ -190,10 +191,10 @@ void Roster::printInvalidEmails()
 	if (!any) cout << "No students with invalid email addresses in roster.";
 }
 
+/***** REQUIREMENT E.3.f */
 // Defining printByDegreeProgram() method
 void Roster::printByDegreeProgram(DegreeProgram degree)
 {
-	// ****Hopefully the casting performed in main.cpp will fix this
 	cout << "\nPrinting all student records for the " << degreeProgramArray[degree] << " degree program:" << "\n\n";
 	for (int i = 0; i <= lastIndex; i++)
 	{
