@@ -1,4 +1,5 @@
 #include "roster.h"
+#include "student.h"
 #include <string>
 #include <cstddef>
 using std::cout;
@@ -109,8 +110,10 @@ void Roster::add(string stuID, string fName, string lName, string email, int age
 	daysInCourseArray[1] = daysInCourse2;
 	daysInCourseArray[2] = daysInCourse3;
 
+	/********* May need to fix this for printing degree type */
+
 	// Adding a student record for each parsed record
-	classRosterArray[lastIndex] = new Student(stuID, fName, lName, email, ageTemp, daysInCourseArray, )
+	classRosterArray[lastIndex] = new Student(stuID, fName, lName, email, ageTemp, daysInCourseArray, degreeTemp);
 
 }
 
