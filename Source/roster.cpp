@@ -163,7 +163,7 @@ void Roster::printAverageDaysInCourse(string studentID)
 		{
 			found = true;
 			int* days = classRosterArray[i]->getDaysToCompleteCourse();
-			cout << "The average number of days to complete a course for student with ID " << studentID << " is " << days[0] + days[1] + days[2] / 3 << "\n\n";
+			cout << "The average number of days to complete a course for student with ID " << studentID << " is " << days[0] + days[1] + days[2] / 3 << "\n";
 		}
 	}
 	if (!found) cout << "Student with ID " << studentID << " not found!" << "\n\n";
@@ -200,7 +200,7 @@ void Roster::printInvalidEmails()
 void Roster::printByDegreeProgram(DegreeProgram degree)
 {
 	// ****Hopefully the casting performed in main.cpp will fix this
-	cout << "Printing all student records for the " << degreeProgramArray[degree] << " degree program:" << "\n\n";
+	cout << "\nPrinting all student records for the " << degreeProgramArray[degree] << " degree program:" << "\n\n";
 	for (int i = 0; i <= lastIndex; i++)
 	{
 		if (this->classRosterArray[i]->getDegreeProgram() == degree) this->classRosterArray[i]->print();

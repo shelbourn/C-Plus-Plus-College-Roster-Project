@@ -91,7 +91,7 @@ int main()
 	else cout << "A student with this ID was not found!\n\n";
 
 	// Removing the student record with the same studentID as above to test error message
-	cout << "Now attempting to remove student record A3 agein:\n\n";
+	cout << "Now attempting to remove student record A3 again:\n\n";
 	if (classRoster->remove("A3"))
 	{
 		classRoster->printAll(); 
