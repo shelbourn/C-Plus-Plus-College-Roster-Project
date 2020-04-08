@@ -209,4 +209,7 @@ Roster::~Roster()
 
 	// Deletes the array of pointers to the student records
 	delete classRosterArray;
+
+	// Prints console message confirming that the ~Roster() destructor was called
+	cout << "The ~Roster() destructor has been executed. All dynamically allocated memory has been released.\n";
 }

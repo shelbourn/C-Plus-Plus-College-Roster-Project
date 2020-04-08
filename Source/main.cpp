@@ -1,6 +1,7 @@
 #include "roster.h"
 #include "degree.h"
 #include "student.h"
+#include <iostream>
 #include <string>
 using std::cout;
 using std::cerr;
@@ -98,5 +99,11 @@ int main()
 	}
 	else cout << "A student with this ID was not found!\n";
 
+	// Pausing the program to keep console window showing until 'ENTER' is pressed
+	system("pause");
+
+	// Printing a confirmation that the Roster destructor was called
+
+	// End of program. Yay!
 	return 0;
 }

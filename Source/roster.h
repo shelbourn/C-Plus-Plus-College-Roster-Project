@@ -3,6 +3,7 @@
 #include <iostream>
 #include "degree.h"
 #include "student.h"
+using std::cout;
 
 // Setting the Roster class, which holds a database of student records
 class Roster
@@ -21,7 +22,7 @@ public:
 	void printInvalidEmails(); // Will locate and print student records with invalid email addresses
 	void printByDegreeProgram(DegreeProgram degree); // Prints all student records by a certain DegreeProgram value
 
-	// Destructor
+	// Destructor with confirmation message that it was called
 	~Roster();
 
 private:
