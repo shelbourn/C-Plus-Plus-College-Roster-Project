@@ -1,4 +1,5 @@
 /***** REQUIREMENT B */
+/***** REQUIREMENT F */
 #include "roster.h"
 #include "degree.h"
 #include "student.h"
@@ -21,6 +22,7 @@ int main()
 	const string wGUStudentID = "001059665";
 	const string userName = "Matthew Shelbourn";
 
+	/***** REQUIREMENT F.1 */
 	// Welcome message
 	cout << "Hi there! " << "My name is " << userName << " and my WGU Student ID number is " << wGUStudentID << ". " << "\n\n";
 	cout << "This program is the finished product of a course project for " << courseTitle << "." << "\n";
@@ -57,6 +59,7 @@ int main()
 	"A5,Matthew,Shelbourn,mshelbo@wgu.edu,39, 47,13,26,SOFTWARE"
 	};
 
+	/***** REQUIREMENT F.2 */
 	// Creating an instance of the roster named classRoster
 	cout << "Creating an instance of the class roster to be used in this session.\t";
 	Roster* classRoster = new Roster(numStudentRecords);
@@ -65,6 +68,7 @@ int main()
 	system("pause");
 	cout << "\n";
 
+	/***** REQUIREMENT F.3 */
 	// Parsing and adding student records to classRoster
 	cout << "Now parsing student data and adding records to the student roster:\t";
 	for (int i = 0; i < numStudentRecords; i++)
@@ -76,6 +80,7 @@ int main()
 	system("pause");
 	cout << "\n";
 
+	/***** REQUIREMENT F.4 */
 	// Printing all students in classRoster
 	cout << "Now listing all students currently in the student roster:\n\n";
 	classRoster->printAll();
@@ -84,6 +89,7 @@ int main()
 	system("pause");
 	cout << "\n";
 
+	/***** REQUIREMENT F.4 */
 	// Printing any invalid emails in classRoster
 	cout << "Now listing all student records with invalid email addresses:\n\n";
 	classRoster->printInvalidEmails();
@@ -92,6 +98,7 @@ int main()
 	system("pause");
 	cout << "\n";
 
+	/***** REQUIREMENT F.4 */
 	// Printing average days a student spends in a course using a loop
 	cout << "Now printing the average number of days each student spends in a course:\n\n";
 	for (int i = 0; i < numStudentRecords; i++)
@@ -104,6 +111,7 @@ int main()
 	system("pause");
 	cout << "\n";
 
+	/***** REQUIREMENT F.4 */
 	// Printing student records by DegreeProgram
 	cout << "Now printing all student records in the roster listed by degree program:\n";
 	for (int i = 0; i < 3; i++) classRoster->printByDegreeProgram((DegreeProgram)i);
@@ -113,6 +121,7 @@ int main()
 	system("pause");
 	cout << "\n";
 
+	/***** REQUIREMENT F.4 */
 	// Removing a student record by studentID and printing the resulting classRoster
 	cout << "Now removing student record associated with Student ID - A3:\n\n";
 	if (classRoster->remove("A3"))
@@ -127,6 +136,7 @@ int main()
 	system("pause");
 	cout << "\n";
 
+	/***** REQUIREMENT F.4 */
 	// Removing the student record with the same studentID as above to test error message
 	cout << "Now attempting to remove student record with the Student ID A3 again:\n\n";
 	if (classRoster->remove("A3"))
@@ -145,6 +155,7 @@ int main()
 	cout << "PROGRAM EXECUTION IS NOW COMPLETE!\n\n";
 	cout << "HAVE A FANTABULOUS DAY!!! ;-)\n";
 	
-	// End of program. Yay!
+	/***** REQUIREMENT G */
+	// End of program. Yay!!!!
 	return 0;
 }

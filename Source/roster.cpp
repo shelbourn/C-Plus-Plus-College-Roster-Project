@@ -49,8 +49,10 @@ void Roster::parseString(string record)
 			exit(-1);
 		}
 
-		// Parse through each roster record (string)
-		// Extract each substring (separated by commas) and store them in temporary variables
+		/*********
+		Parse through each roster record (string)
+		Extract each substring (separated by commas) and storing them in temporary variables
+		*********/
 
 		// Extracting the Student ID
 		int rightSubStringEnd = record.find(",");
@@ -202,6 +204,7 @@ void Roster::printByDegreeProgram(DegreeProgram degree)
 	}
 }
 
+/***** REQUIREMENT G */
 // Defining destructor for Roster -- THIS DESTROYS ALL STUDENT RECORDS!!!
 Roster::~Roster()
 {
@@ -213,4 +216,6 @@ Roster::~Roster()
 
 	// Deletes the array of pointers to the student records
 	delete classRosterArray;
+	cout << "THE ROSTER HAS NOW BEEN DESTROYED BY THE DESTRUCTOR!\n\n";
+	cout << "ALL MEMORY HAS BEEN RELEASED!\n";
 }
