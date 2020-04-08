@@ -1,6 +1,6 @@
 #include "roster.h"
-#include "degree.h"
-#include "student.h"
+#include <string>
+#include <cstddef>
 using std::cout;
 using std::cerr;
 using namespace std;
@@ -67,29 +67,29 @@ void Roster::parseString(string record)
 		rightSubStringEnd = record.find(",", leftSubStringEnd);
 		string email = record.substr(leftSubStringEnd, rightSubStringEnd - leftSubStringEnd);
 
-// Extracting Age
-leftSubStringEnd = rightSubStringEnd + 1;
-rightSubStringEnd = record.find(",", leftSubStringEnd);
-int ageTemp = stoi(record.substr(leftSubStringEnd, rightSubStringEnd - leftSubStringEnd));
+		// Extracting Age
+		leftSubStringEnd = rightSubStringEnd + 1;
+		rightSubStringEnd = record.find(",", leftSubStringEnd);
+		int ageTemp = stoi(record.substr(leftSubStringEnd, rightSubStringEnd - leftSubStringEnd));
 
-// Extracting each value for daysInCourse
-// daysInCourse1
-leftSubStringEnd = rightSubStringEnd + 1;
-rightSubStringEnd = record.find(",", leftSubStringEnd);
-int daysInCourse1 = stoi(record.substr(leftSubStringEnd, rightSubStringEnd - leftSubStringEnd));
+		// Extracting each value for daysInCourse
+		// daysInCourse1
+		leftSubStringEnd = rightSubStringEnd + 1;
+		rightSubStringEnd = record.find(",", leftSubStringEnd);
+		int daysInCourse1 = stoi(record.substr(leftSubStringEnd, rightSubStringEnd - leftSubStringEnd));
 
-// daysInCourse2
-leftSubStringEnd = rightSubStringEnd + 1;
-rightSubStringEnd = record.find(",", leftSubStringEnd);
-int daysInCourse2 = stoi(record.substr(leftSubStringEnd, rightSubStringEnd - leftSubStringEnd));
+		// daysInCourse2
+		leftSubStringEnd = rightSubStringEnd + 1;
+		rightSubStringEnd = record.find(",", leftSubStringEnd);
+		int daysInCourse2 = stoi(record.substr(leftSubStringEnd, rightSubStringEnd - leftSubStringEnd));
 
-// daysInCourse3
-leftSubStringEnd = rightSubStringEnd + 1;
-rightSubStringEnd = record.find(",", leftSubStringEnd);
-int daysInCourse3 = stoi(record.substr(leftSubStringEnd, rightSubStringEnd - leftSubStringEnd));
+		// daysInCourse3
+		leftSubStringEnd = rightSubStringEnd + 1;
+		rightSubStringEnd = record.find(",", leftSubStringEnd);
+		int daysInCourse3 = stoi(record.substr(leftSubStringEnd, rightSubStringEnd - leftSubStringEnd));
 
-// Adding all the parsed student data as a record in the roster
-add(stuID, fName, lName, email, ageTemp, daysInCourse1, daysInCourse2, daysInCourse3, degreeTemp);
+		// Adding all the parsed student data as a record in the roster
+		add(stuID, fName, lName, email, ageTemp, daysInCourse1, daysInCourse2, daysInCourse3, degreeTemp);
 	}
 
 	// Exit program if roster capacity is exceeded
@@ -108,6 +108,10 @@ void Roster::add(string stuID, string fName, string lName, string email, int age
 	daysInCourseArray[0] = daysInCourse1;
 	daysInCourseArray[1] = daysInCourse2;
 	daysInCourseArray[2] = daysInCourse3;
+
+	// Adding a student record for each parsed record
+	classRosterArray[lastIndex] = new Student(stuID, fName, lName, email, ageTemp, daysInCourseArray, )
+
 }
 
 // Defining remove() method to remove student record by studentID

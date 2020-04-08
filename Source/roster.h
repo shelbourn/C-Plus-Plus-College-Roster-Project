@@ -8,6 +8,11 @@ using std::cout;
 // Setting the Roster class, which holds a database of student records
 class Roster
 {
+private:
+	int lastIndex; // Index of last student record in the roster (how many entries are in the roster)
+	int capacity; // Max size of the roster (Number of pointers in array. How many records allowed)
+	Student** classRosterArray; // classRosterArray is an array of pointers to the data in the student roster
+
 public:
 	Roster(); // Empty constructor to set the Roster to default values
 	Roster(int capacity); // Sets the max size (number of records) for the Roster
@@ -24,9 +29,4 @@ public:
 
 	// Destructor with confirmation message that it was called
 	~Roster();
-
-private:
-	int lastIndex; // Index of last student record in the roster (how many entries are in the roster)
-	int capacity; // Max size of the roster (Number of pointers in array. How many records allowed)
-	Student** classRosterArray; // classRosterArray is an array of pointers to the data in the student roster
 };

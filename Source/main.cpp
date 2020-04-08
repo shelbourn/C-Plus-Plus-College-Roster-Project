@@ -22,7 +22,7 @@ int main()
 	const string userName = "Matthew Shelbourn";
 
 	// Welcome message
-	cout << "Hi there!" << "My name is " << userName << " and my WGU Student ID number is " << wGUStudentID << ". " << "\n";
+	cout << "Hi there! " << "My name is " << userName << " and my WGU Student ID number is " << wGUStudentID << ". " << "\n";
 	cout << "This program is the finished product of a course project for " << courseTitle << "." << "\n";
 	cout << "This program was built using the tried and true programming language " << programmingLanguage << "." << "\n";
 	cout << "It will demonstrate how several C++ components can be implemented to create a console program.\n";
@@ -94,7 +94,7 @@ int main()
 	cout << "Now attempting to remove student record A3 agein:\n";
 	if (classRoster->remove("A3"))
 	{
-		classRoster->printAll();
+		classRoster->printAll(); 
 		numStudentRecords--;
 	}
 	else cout << "A student with this ID was not found!\n";

@@ -8,10 +8,21 @@ using std::string;
 class Student
 {
 public:
-
 	// Initializing Days in Course array with size of 3
 	const static int numDaysArraySize = 3;
 
+private:
+	// Declaring private variables
+	string studentID;
+	string firstName;
+	string lastName;
+	string emailAddress;
+	int age;
+	int daysToCompleteCourse[numDaysArraySize];
+	DegreeProgram degree; /*Sub-Class??? Or Enum Array???*/
+	string degreePrint;
+
+public:
 	// Constructors
 	Student(); // Will set an empty roster with default values for all fields
 	Student(string studentID, string firstName, string lastName, string emailAddress, int age, int daysToCompleteCourse[], DegreeProgram degree);
@@ -33,20 +44,11 @@ public:
 	void setAge(int age);
 	void setDaysToCompleteCourse(int daysToCompleteCourse[]);
 	void setDegreeProgram(DegreeProgram degree); /*Sub-Class??? Or Enum Array???*/
+	void degreeProgramPrint(DegreeProgram degreePrint);
 
 	// Print function to print specific student data to console
 	void print();
 
 	// Destructor
 	~Student();
-
-private:
-	// Declaring private variables
-	string studentID;
-	string firstName;
-	string lastName;
-	string emailAddress;
-	int age;
-	int daysToCompleteCourse[numDaysArraySize];
-	DegreeProgram degree; /*Sub-Class??? Or Enum Array???*/
 };
