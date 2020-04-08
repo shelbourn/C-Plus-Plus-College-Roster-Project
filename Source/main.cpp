@@ -43,6 +43,7 @@ int main()
 	cout << "Press any key to begin program execution.\n\n";
 
 	system("pause");
+	cout << "\n";
 
 	// Data to be parsed and utilized in program
 	const string studentData[5] =
@@ -55,9 +56,12 @@ int main()
 	};
 
 	// Creating an instance of the roster named classRoster
-	cout << "Creating an instance of the Class Roster to be used in this session.\n\n";
+	cout << "Creating an instance of the class roster to be used in this session.\t";
 	Roster* classRoster = new Roster(numStudentRecords);
-	cout << "PROCESS COMPLETE!\n\n";
+	cout << "...PROCESS COMPLETE!\n\n";
+
+	system("pause");
+	cout << "\n";
 
 	// Parsing and adding student records to classRoster
 	cout << "Now parsing student data and adding records to the student roster:\t";
@@ -67,26 +71,48 @@ int main()
 	}
 	cout << "...PROCESS COMPLETE!\n\n";
 
+	system("pause");
+	cout << "\n";
+
 	// Printing all students in classRoster
 	cout << "Now listing all students currently in the student roster:\n\n";
 	classRoster->printAll();
+	cout << "\n...PROCESS COMPLETE!\n\n";
+
+	system("pause");
+	cout << "\n";
 
 	// Printing any invalid emails in classRoster
-	cout << "\nNow listing all student records with invalid email addresses:\n\n";
+	cout << "Now listing all student records with invalid email addresses:\n\n";
 	classRoster->printInvalidEmails();
+	cout << "\n...PROCESS COMPLETE!\n\n";
+
+	system("pause");
+	cout << "\n";
 
 	// Printing average days a student spends in a course using a loop
-	cout << "\nNow printing the average number of days each student spends in a course:\n\n";
+	cout << "Now printing the average number of days each student spends in a course:\n\n";
 	for (int i = 0; i < numStudentRecords; i++)
 	{
 		classRoster->printAverageDaysInCourse(classRoster->getStudentRecordAt(i)->getStudentID());
 	}
 
+	cout << "\n...PROCESS COMPLETE!\n\n";
+
+	system("pause");
+	cout << "\n";
+
 	// Printing student records by DegreeProgram
+	cout << "Now printing all student records in the roster listed by degree program:\n";
 	for (int i = 0; i < 3; i++) classRoster->printByDegreeProgram((DegreeProgram)i);
 
+	cout << "\n...PROCESS COMPLETE!\n\n";
+
+	system("pause");
+	cout << "\n";
+
 	// Removing a student record by studentID and printing the resulting classRoster
-	cout << "\nNow removing student record associated with Student ID - A3:\n\n";
+	cout << "Now removing student record associated with Student ID - A3:\n\n";
 	if (classRoster->remove("A3"))
 	{
 		classRoster->printAll();
@@ -94,8 +120,13 @@ int main()
 	}
 	else cout << "A student with this ID was not found!\n\n";
 
+	cout << "\n...PROCESS COMPLETE!\n\n";
+
+	system("pause");
+	cout << "\n";
+
 	// Removing the student record with the same studentID as above to test error message
-	cout << "\nNow attempting to remove student record A3 again:\n\n";
+	cout << "Now attempting to remove student record with the Student ID A3 again:\n\n";
 	if (classRoster->remove("A3"))
 	{
 		classRoster->printAll(); 
@@ -103,11 +134,13 @@ int main()
 	}
 	else cout << "A student with this ID was not found!\n\n";
 
-	// Pausing the program to keep console window showing until 'ENTER' is pressed
+	cout << "...PROCESS COMPLETE!\n\n";
+
 	system("pause");
+	cout << "\n";
 
 	// Printing confirmation of program execution complete!
-	cout << "\nPROGRAM EXECUTION IS NOW COMPLETE!\n\n";
+	cout << "PROGRAM EXECUTION IS NOW COMPLETE!\n\n";
 	cout << "HAVE A FANTABULOUS DAY!!! ;-)\n";
 	
 	// End of program. Yay!
