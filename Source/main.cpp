@@ -61,18 +61,18 @@ int main()
 	{
 		classRoster->parseString(studentData[i]);
 	}
-	cout << "PROCESS COMPLETE!\n";
+	cout << "...PROCESS COMPLETE!\n";
 
 	// Printing all students in classRoster
-	cout << "List of all students currently in the student roster:\n";
+	cout << "List of all students currently in the student roster:\n\n";
 	classRoster->printAll();
 
 	// Printing any invalid emails in classRoster
-	cout << "List of all student records with invalid email addresses:\n";
+	cout << "List of all student records with invalid email addresses:\n\n";
 	classRoster->printInvalidEmails();
 
 	// Printing average days a student spends in a course using a loop
-	cout << "Now printing the average number of days each student spends in a course:\n";
+	cout << "Now printing the average number of days each student spends in a course:\n\n";
 	for (int i = 0; i < numStudentRecords; i++)
 	{
 		classRoster->printAverageDaysInCourse(classRoster->getStudentRecordAt(i)->getStudentID());
@@ -82,27 +82,29 @@ int main()
 	for (int i = 0; i < 3; i++) classRoster->printByDegreeProgram((DegreeProgram)i);
 
 	// Removing a student record by studentID and printing the resulting classRoster
-	cout << "Now removing student record associated with Student ID - A3:\n";
+	cout << "Now removing student record associated with Student ID - A3:\n\n";
 	if (classRoster->remove("A3"))
 	{
 		classRoster->printAll();
 		numStudentRecords--;
 	}
-	else cout << "A student with this ID was not found!\n";
+	else cout << "A student with this ID was not found!\n\n";
 
 	// Removing the student record with the same studentID as above to test error message
-	cout << "Now attempting to remove student record A3 agein:\n";
+	cout << "Now attempting to remove student record A3 agein:\n\n";
 	if (classRoster->remove("A3"))
 	{
 		classRoster->printAll(); 
 		numStudentRecords--;
 	}
-	else cout << "A student with this ID was not found!\n";
+	else cout << "A student with this ID was not found!\n\n";
 
 	// Pausing the program to keep console window showing until 'ENTER' is pressed
 	system("pause");
 
-	// Printing a confirmation that the Roster destructor was called
+	// Printing confirmation of program execution complete!
+	cout << "PROGRAM EXECUTION IS NOW COMPLETE!\n\n";
+	cout << "HAVE A FANTABULOUS DAY!!! ;-)\n";
 	
 	// End of program. Yay!
 	return 0;
