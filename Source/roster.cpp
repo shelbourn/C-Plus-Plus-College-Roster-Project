@@ -1,3 +1,4 @@
+/***** REQUIREMENT B */
 #include "roster.h"
 #include "student.h"
 #include <string>

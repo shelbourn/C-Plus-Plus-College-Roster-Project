@@ -1,3 +1,4 @@
+/***** REQUIREMENT B */
 #include "roster.h"
 #include "degree.h"
 #include "student.h"
@@ -45,6 +46,7 @@ int main()
 	system("pause");
 	cout << "\n";
 
+	/***** REQUIREMENT A */
 	// Data to be parsed and utilized in program
 	const string studentData[5] =
 	{

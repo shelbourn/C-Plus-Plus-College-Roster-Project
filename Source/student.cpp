@@ -1,3 +1,4 @@
+/***** REQUIREMENT B */
 #include <iostream>
 #include <iomanip>
 #include "student.h"

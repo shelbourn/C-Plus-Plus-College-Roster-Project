@@ -1,3 +1,4 @@
+/***** REQUIREMENT B */
 #pragma once
 #include "degree.h"
 #include <string>
