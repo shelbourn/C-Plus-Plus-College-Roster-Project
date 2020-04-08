@@ -147,7 +147,7 @@ void Student::print()
 	cout << left << setw(15) << firstName;
 	cout << left << setw(15) << lastName;
 	cout << left << setw(35) << emailAddress;
-	cout << left << setw(3) << age;
+	cout << left << setw(4) << age;
 	cout << left << setw(4) << daysToCompleteCourse[0]; // *** Make sure that commas separate values here
 	cout << left << setw(4) << daysToCompleteCourse[1];
 	cout << left << setw(4) << daysToCompleteCourse[2];

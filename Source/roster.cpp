@@ -163,7 +163,7 @@ void Roster::printAverageDaysInCourse(string studentID)
 		{
 			found = true;
 			int* days = classRosterArray[i]->getDaysToCompleteCourse();
-			cout << "The average number of days to complete a course for student with ID " << studentID << " is " << days[0] + days[1] + days[2] / 3 << "\n";
+			cout << "The average number of days to complete a course for student with ID " << studentID << " is " << days[0] + days[1] + days[2] / 3 << " days." << "\n";
 		}
 	}
 	if (!found) cout << "Student with ID " << studentID << " not found!" << "\n\n";
@@ -172,7 +172,6 @@ void Roster::printAverageDaysInCourse(string studentID)
 // Defining printInvalidEmails() method
 void Roster::printInvalidEmails()
 {
-	cout << "Students with invalid email addresses in roster:\n\n";
 	bool any = false;
 	for (int i = 0; i <= lastIndex; i++)
 	{
@@ -190,8 +189,8 @@ void Roster::printInvalidEmails()
 			any = true;
 			cout << "Student ID: " << classRosterArray[i]->getStudentID();
 			cout << " -- " << "Email Address: " << classRosterArray[i]->getEmailAddress();
+			cout << "\n";
 		}
-		if (any) cout << "\n";
 	}
 	if (!any) cout << "No students with invalid email addresses in roster.";
 }
