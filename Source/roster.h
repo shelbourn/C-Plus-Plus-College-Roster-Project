@@ -1,4 +1,5 @@
 /***** REQUIREMENT B */
+/***** REQUIREMENT E */
 #pragma once
 #include <string>
 #include <iostream>
@@ -12,6 +13,8 @@ class Roster
 private:
 	int lastIndex; // Index of last student record in the roster (how many entries are in the roster)
 	int capacity; // Max size of the roster (Number of pointers in array. How many records allowed)
+
+	/***** REQUIREMENT E.1 */
 	Student** classRosterArray; // classRosterArray is an array of pointers to the data in the student roster
 
 public:

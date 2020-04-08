@@ -7,6 +7,7 @@ using std::cout;
 using std::left;
 using std::setw;
 
+/***** REQUIREMENT D.2.d */
 //Empty constructor to set fields to default values
 Student::Student()
 {
@@ -16,15 +17,10 @@ Student::Student()
 	this->emailAddress = "";
 	this->age = 0;
 	for (int i = 0; i < numDaysArraySize; i++) this->daysToCompleteCourse[i] = 0;
-	this->degree; /*Sub-Class??? Or Enum Array???*/
-
-	/********
-	NOTE: I might need to create a sub-class for the enum DegreeProgram or need
-	to use the degreeProgramArray to fix the setters, getters, and constructors
-	for the degree program
-	*/
+	this->degree;
 }
 
+/***** REQUIREMENT D.2.d */
 // Full constructor to build out student roster line entry
 Student::Student(string studentID, string firstName, string lastName, string emailAddress, int age, int daysToCompleteCourse[], DegreeProgram degree)
 {
@@ -37,6 +33,7 @@ Student::Student(string studentID, string firstName, string lastName, string ema
 	this->degree = degree; /*Sub-Class??? Or Enum Array???*/
 }
 
+/***** REQUIREMENT D.2.a */
 // Defining Getter Functions
 string Student::getStudentID()
 {
@@ -73,6 +70,7 @@ DegreeProgram Student::getDegreeProgram()
 	return degree;
 }
 
+/***** REQUIREMENT D.2.b */
 // Defining Setter Functions
 void Student::setStudentID(string studentID)
 {
@@ -110,7 +108,7 @@ void Student::setDegreeProgram(DegreeProgram degree)
 	this->degree = degree;
 }
 
-/************* May need to move this to the student.h file */
+// Function specifically linked to printing DegreeProgram to console
 void Student::degreeProgramPrint(DegreeProgram degree)
 {
 	// Converting the DegreeProgram value to a string for printing
@@ -136,22 +134,21 @@ void Student::degreeProgramPrint(DegreeProgram degree)
 	this->degreePrint = degreeResult;
 }
 
-/************* There might be an issue with the implementation of the degreeProgramPrint() method */
-
+/***** REQUIREMENT D.2.e */
 // Defining the print() function to print all fields to the console
 void Student::print()
 {
 	degreeProgramPrint(degree);
 
-	cout << left << setw(5) << studentID;
-	cout << left << setw(15) << firstName;
-	cout << left << setw(15) << lastName;
-	cout << left << setw(35) << emailAddress;
-	cout << left << setw(4) << age;
-	cout << left << setw(4) << daysToCompleteCourse[0]; // *** Make sure that commas separate values here
-	cout << left << setw(4) << daysToCompleteCourse[1];
-	cout << left << setw(4) << daysToCompleteCourse[2];
-	cout << left << setw(12) << degreePrint << "\n"; // Does this work???
+	cout << left << "ID: " << setw(6) << studentID;
+	cout << left << "First Name: " << setw(12) << firstName;
+	cout << left << "Last Name: " << setw(14) << lastName;
+	cout << left << "Email: " << setw(27) << emailAddress;
+	cout << left << "Age: " << setw(6) << age;
+	cout << left << "Days in Course: " << daysToCompleteCourse[0] << ", "; // *** Make sure that commas separate values here
+	cout << left << daysToCompleteCourse[1] << ", ";
+	cout << left << setw(6) << daysToCompleteCourse[2];
+	cout << left << "Degree Program: " << setw(15) << degreePrint << "\n";
 }
 
 // Defining the destructor function for Student
