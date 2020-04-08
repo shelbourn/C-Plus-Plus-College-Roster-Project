@@ -154,8 +154,16 @@ int main()
 	// Printing confirmation of program execution complete!
 	cout << "PROGRAM EXECUTION IS NOW COMPLETE!\n\n";
 	cout << "HAVE A FANTABULOUS DAY!!! ;-)\n";
-	
+
+	system("pause");
+	cout << "\n";
+
 	/***** REQUIREMENT G */
+	cout << "NOW IMPLEMENTING DESTRUCTOR TO DELETE STUDENT ROSTER AND RELEASE MEMORY.\n";
+
+	system("pause");
+	cout << "\n";
+	
 	// End of program. Yay!!!!
 	return 0;
 }
