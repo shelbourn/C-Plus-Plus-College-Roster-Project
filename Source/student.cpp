@@ -110,6 +110,7 @@ void Student::setDegreeProgram(DegreeProgram degree)
 	this->degree = degree;
 }
 
+/************* May need to move this to the student.h file */
 void Student::degreeProgramPrint(DegreeProgram degree)
 {
 	// Converting the DegreeProgram value to a string for printing
@@ -135,7 +136,7 @@ void Student::degreeProgramPrint(DegreeProgram degree)
 	this->degreePrint = degreeResult;
 }
 
-/************* May need to move this to the student.h file */
+/************* There might be an issue with the implementation of the degreeProgramPrint() method */
 
 // Defining the print() function to print all fields to the console
 void Student::print()
@@ -152,7 +153,6 @@ void Student::print()
 	cout << left << setw(4) << daysToCompleteCourse[2];
 	cout << left << setw(12) << degreePrint << "\n"; // Does this work???
 }
-
 
 // Defining the destructor function for Student
 Student::~Student()
