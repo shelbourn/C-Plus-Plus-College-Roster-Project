@@ -136,10 +136,12 @@ bool Roster::remove(string studentID)
 			// Shrinks the roster by one record
 			lastIndex--;
 		}
+		/*
 		else
 		{
 			cerr << "ERROR! A STUDENT WITH THIS ID DOES NOT EXIST IN THE ROSTER!" << "\n";
 		}
+		*/
 	}
 	return found;
 }
@@ -161,7 +163,7 @@ void Roster::printAverageDaysInCourse(string studentID)
 		{
 			found = true;
 			int* days = classRosterArray[i]->getDaysToCompleteCourse();
-			cout << "The average number of days to complete a course for student with ID " << studentID << " is " << days[0] + days[1] + days[2] / 3 << "/n";
+			cout << "The average number of days to complete a course for student with ID " << studentID << " is " << days[0] + days[1] + days[2] / 3 << "\n";
 		}
 	}
 	if (!found) cout << "Student with ID " << studentID << " not found!" << "\n";
@@ -216,7 +218,4 @@ Roster::~Roster()
 
 	// Deletes the array of pointers to the student records
 	delete classRosterArray;
-
-	// Prints console message confirming that the ~Roster() destructor was called
-	cout << "The ~Roster() destructor has been executed. All dynamically allocated memory has been released.\n";
 }

@@ -103,7 +103,7 @@ int main()
 	system("pause");
 
 	// Printing a confirmation that the Roster destructor was called
-
+	
 	// End of program. Yay!
 	return 0;
 }
