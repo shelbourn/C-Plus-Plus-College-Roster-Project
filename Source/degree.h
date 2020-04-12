@@ -1,6 +1,8 @@
+/***** REQUIREMENT B */
 #pragma once
-#include <string>;
+#include <string>
 
+/***** REQUIREMENT C */
 // Initializing enumerated data type values for the Degree Programs
 enum DegreeProgram { SECURITY, NETWORK, SOFTWARE };
 
