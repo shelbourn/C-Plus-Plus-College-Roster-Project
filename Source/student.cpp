@@ -108,8 +108,13 @@ void Student::setDegreeProgram(DegreeProgram degree)
 	this->degree = degree;
 }
 
+void Student::setDegreeProgramPrint(DegreeProgram degreeResult)
+{
+	this->degreeResult = degreeResult;
+}
+
 // Function specifically linked to printing DegreeProgram to console
-void Student::degreeProgramPrint(DegreeProgram degree)
+void Student::getDegreeProgramPrint(DegreeProgram degree)
 {
 	// Converting the DegreeProgram value to a string for printing
 	string degreeResult;
@@ -140,7 +145,7 @@ void Student::print()
 {
 	degreeProgramPrint(degree);
 
-	cout << left << "ID: " << setw(6) << studentID;
+	cout << left << "ID: " << setw(6) << getStudentID();
 	cout << left << "First Name: " << setw(12) << firstName;
 	cout << left << "Last Name: " << setw(14) << lastName;
 	cout << left << "Email: " << setw(27) << emailAddress;
@@ -148,7 +153,7 @@ void Student::print()
 	cout << left << "Days in Course: " << daysToCompleteCourse[0] << ", "; // *** Make sure that commas separate values here
 	cout << left << daysToCompleteCourse[1] << ", ";
 	cout << left << setw(6) << daysToCompleteCourse[2];
-	cout << left << "Degree Program: " << setw(15) << degreePrint << "\n";
+	cout << left << "Degree Program: " << setw(15) << getDegreePrint << "\n";
 }
 
 // Defining the destructor function for Student
