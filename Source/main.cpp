@@ -43,6 +43,7 @@ int main()
 	cout << "And Much More!!!\n";
 	cout << "\n";
 	cout << "ENJOY! =)\n\n";
+	cout << "PLEASE MAXIMIZE THE CONSOLE WINDOW FOR BEST READABILITY OF PROGRAM OUTPUT!\n\n"
 	cout << "Press any key to begin program execution.\n\n";
 
 	system("pause");
@@ -125,18 +126,9 @@ int main()
 	// Removing a student record by studentID and printing the resulting classRoster
 	cout << "Now removing student record associated with Student ID - A3:\n\n";
 
-	// Editing code per submission assessment
-	/*if (classRoster->remove("A3"))
-	{
-		classRoster->printAll();
-		numStudentRecords--;
-	}*/
-
-	// REVISION
 	classRoster->remove("A3");
 	numStudentRecords--;
-
-	/*else cout << "A student with this ID was not found!\n\n";*/
+	classRoster->printAll();
 
 	cout << "...PROCESS COMPLETE!\n\n";
 
@@ -147,15 +139,6 @@ int main()
 	// Removing the student record with the same studentID as above to test error message
 	cout << "Now attempting to remove student record with the Student ID A3 again:\n\n";
 
-	// Edition code per submission assessment
-	/*if (classRoster->remove("A3"))
-	{
-		classRoster->printAll(); 
-		numStudentRecords--;
-	}
-	else cout << "A student with this ID was not found!\n\n";*/
-
-	//REVISION
 	classRoster->remove("A3");
 	classRoster->printAll();
 
