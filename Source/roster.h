@@ -30,7 +30,7 @@ public:
 	void printAll(); // Prints all student records in the roster
 	void printAverageDaysInCourse(string studentID); // Prints a certain student's average time to complete a course
 	void printInvalidEmails(); // Will locate and print student records with invalid email addresses
-	void printByDegreeProgram(DegreeProgram degree); // Prints all student records by a certain DegreeProgram value
+	void printByDegreeProgram(string degree); // Prints all student records by a certain DegreeProgram value
 
 	// Destructor for Roster
 	~Roster();
