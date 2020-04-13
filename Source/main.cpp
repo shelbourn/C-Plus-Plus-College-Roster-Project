@@ -157,8 +157,9 @@ int main()
 
 	//REVISION
 	classRoster->remove("A3");
+	classRoster->printAll();
 
-	cout << "...PROCESS COMPLETE!\n\n";
+	cout << "\n...PROCESS COMPLETE!\n\n";
 
 	system("pause");
 	cout << "\n";
@@ -171,7 +172,7 @@ int main()
 	cout << "\n";
 
 	/***** REQUIREMENT G */
-	cout << "NOW IMPLEMENTING DESTRUCTOR TO DELETE STUDENT ROSTER AND RELEASE MEMORY.\n";
+	cout << "\nNOW IMPLEMENTING DESTRUCTOR TO DELETE STUDENT ROSTER AND RELEASE MEMORY.\n";
 
 	system("pause");
 	cout << "\n";
