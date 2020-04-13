@@ -124,16 +124,21 @@ int main()
 	/***** REQUIREMENT F.4 */
 	// Removing a student record by studentID and printing the resulting classRoster
 	cout << "Now removing student record associated with Student ID - A3:\n\n";
-	if (classRoster->remove("A3"))
+
+	// Editing code per submission assessment
+	/*if (classRoster->remove("A3"))
 	{
 		classRoster->printAll();
 		numStudentRecords--;
-	}
+	}*/
 
-	// Editing code per submission assessment
+	// REVISION
+	classRoster->remove("A3");
+	numStudentRecords--;
+
 	/*else cout << "A student with this ID was not found!\n\n";*/
 
-	cout << "\n...PROCESS COMPLETE!\n\n";
+	cout << "...PROCESS COMPLETE!\n\n";
 
 	system("pause");
 	cout << "\n";
@@ -141,12 +146,17 @@ int main()
 	/***** REQUIREMENT F.4 */
 	// Removing the student record with the same studentID as above to test error message
 	cout << "Now attempting to remove student record with the Student ID A3 again:\n\n";
-	if (classRoster->remove("A3"))
+
+	// Edition code per submission assessment
+	/*if (classRoster->remove("A3"))
 	{
 		classRoster->printAll(); 
 		numStudentRecords--;
 	}
-	else cout << "A student with this ID was not found!\n\n";
+	else cout << "A student with this ID was not found!\n\n";*/
+
+	//REVISION
+	classRoster->remove("A3");
 
 	cout << "...PROCESS COMPLETE!\n\n";
 

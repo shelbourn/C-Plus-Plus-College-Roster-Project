@@ -144,7 +144,11 @@ bool Roster::remove(string studentID)
 			lastIndex--;
 		}
 		// Adding code revision per assessment review
-		else cerr << "NO STUDENT RECORD WITH STUDENT ID " << studentID << " EXISTS IN THE ROSTER!!" << "\n";
+		/*else cerr << "NO STUDENT RECORD WITH STUDENT ID " << studentID << " EXISTS IN THE ROSTER!!" << "\n\n";*/
+	}
+	if (found == false)
+	{
+	cerr << "NO STUDENT RECORD WITH STUDENT ID " << studentID << " EXISTS IN THE ROSTER!!" << "\n\n";
 	}
 	return found;
 }
