@@ -129,7 +129,9 @@ int main()
 		classRoster->printAll();
 		numStudentRecords--;
 	}
-	else cout << "A student with this ID was not found!\n\n";
+
+	// Editing code per submission assessment
+	/*else cout << "A student with this ID was not found!\n\n";*/
 
 	cout << "\n...PROCESS COMPLETE!\n\n";
 
