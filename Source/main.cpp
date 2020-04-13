@@ -43,7 +43,7 @@ int main()
 	cout << "And Much More!!!\n";
 	cout << "\n";
 	cout << "ENJOY! =)\n\n";
-	cout << "PLEASE MAXIMIZE THE CONSOLE WINDOW FOR BEST READABILITY OF PROGRAM OUTPUT!\n\n"
+	cout << "PLEASE MAXIMIZE THE CONSOLE WINDOW FOR BEST READABILITY OF PROGRAM OUTPUT!\n\n";
 	cout << "Press any key to begin program execution.\n\n";
 
 	system("pause");
