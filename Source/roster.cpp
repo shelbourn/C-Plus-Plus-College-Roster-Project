@@ -199,9 +199,9 @@ void Roster::printInvalidEmails()
 
 /***** REQUIREMENT E.3.f */
 // Defining printByDegreeProgram() method
-void Roster::printByDegreeProgram(string degree)
+void Roster::printByDegreeProgram(DegreeProgram degree)
 {
-	cout << "\nPrinting all student records for the " << degree << " degree program:" << "\n\n";
+	cout << "\nPrinting all student records for the " << degreeProgramArray[degree] << " degree program:" << "\n\n";
 	for (int i = 0; i <= lastIndex; i++)
 	{
 		if (this->classRosterArray[i]->getDegreeProgram() == degree) this->classRosterArray[i]->print();

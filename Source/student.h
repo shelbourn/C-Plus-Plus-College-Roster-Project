@@ -39,7 +39,8 @@ public:
 	string getEmailAddress();
 	int getAge();
 	int* getDaysToCompleteCourse();
-	string getDegreeProgram();
+	DegreeProgram getDegreeProgram();
+	string getDegreeProgramPrint();
 	/*string getDegreeProgramPrint(DegreeProgram degreePrint);*/
 
 	/***** REQUIREMENT D.2.b */
@@ -51,6 +52,7 @@ public:
 	void setAge(int age);
 	void setDaysToCompleteCourse(int daysToCompleteCourse[]);
 	void setDegreeProgram(DegreeProgram degree);
+	void setDegreeProgramPrint(string degreePrint);
 	/*void setDegreeProgramPrint();*/
 
 	/***** REQUIREMENT D.2.e */

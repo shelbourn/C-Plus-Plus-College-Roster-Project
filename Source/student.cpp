@@ -65,30 +65,35 @@ int* Student::getDaysToCompleteCourse()
 	return daysToCompleteCourse;
 }
 
-string Student::getDegreeProgram()
+DegreeProgram Student::getDegreeProgram()
+{
+	return degree;
+}
+
+string Student::getDegreeProgramPrint()
 {
 	// Converting the DegreeProgram value to a string for printing
-	string degreeResult;
+	string degreePrint;
 	switch (degree) {
 
 	case DegreeProgram::SECURITY:
-		degreeResult = "SECURITY";
+		degreePrint = "SECURITY";
 		break;
 
 	case DegreeProgram::NETWORK:
-		degreeResult = "NETWORK";
+		degreePrint = "NETWORK";
 		break;
 
 	case DegreeProgram::SOFTWARE:
-		degreeResult = "SOFTWARE";
+		degreePrint = "SOFTWARE";
 		break;
 
 	default:
-		degreeResult = "NONE SPECIFIED";
+		degreePrint = "NONE SPECIFIED";
 		break;
 	}
 
-	return degreeResult;
+	return degreePrint;
 }
 
 /***** REQUIREMENT D.2.b */
@@ -130,6 +135,11 @@ void Student::setDaysToCompleteCourse(int daysToCompleteCourse[])
 void Student::setDegreeProgram(DegreeProgram degree)
 {
 	this->degree = degree;
+}
+
+void Student::setDegreeProgramPrint(string degreePrint)
+{
+	this->degreePrint = degreePrint;
 }
 
 //void Student::setDegreeProgramPrint(DegreeProgram degreeResult)
@@ -177,7 +187,7 @@ void Student::print()
 	cout << left << "Days in Course: " << getDaysToCompleteCourse();// *** Make sure that commas separate values here
 	/*cout << left << daysToCompleteCourse[1] << ", ";
 	cout << left << setw(6) << daysToCompleteCourse[2];*/
-	cout << left << "Degree Program: " << setw(15) << getDegreeProgram() << "\n";
+	cout << left << "Degree Program: " << setw(15) << getDegreeProgramPrint() << "\n";
 }
 
 // Defining the destructor function for Student
