@@ -130,7 +130,7 @@ int main()
 	numStudentRecords--;
 	classRoster->printAll();
 
-	cout << "...PROCESS COMPLETE!\n\n";
+	cout << "\n...PROCESS COMPLETE!\n\n";
 
 	system("pause");
 	cout << "\n";

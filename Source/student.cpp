@@ -3,6 +3,7 @@
 #include <iomanip>
 #include "student.h"
 #include "degree.h"
+#include "roster.h"
 using std::cout;
 using std::left;
 using std::setw;
@@ -30,7 +31,7 @@ Student::Student(string studentID, string firstName, string lastName, string ema
 	this->emailAddress = emailAddress;
 	this->age = age;
 	for (int i = 0; i < numDaysArraySize; i++) this->daysToCompleteCourse[i] = daysToCompleteCourse[i];
-	this->degree = degree; /*Sub-Class??? Or Enum Array???*/
+	this->degree = degree;
 }
 
 /***** REQUIREMENT D.2.a */
@@ -72,7 +73,7 @@ DegreeProgram Student::getDegreeProgram()
 
 string Student::getDegreeProgramPrint()
 {
-	// Converting the DegreeProgram value to a string for printing
+	// Converting the DegreeProgram enum value to a string for printing
 	string degreePrint;
 	switch (degree) {
 
@@ -128,7 +129,6 @@ void Student::setDaysToCompleteCourse(int daysToCompleteCourse[])
 	for (int i = 0; i < numDaysArraySize; i++)
 	{
 		this->daysToCompleteCourse[i] = daysToCompleteCourse[i];
-		cout << ", ";
 	}
 }
 
@@ -142,37 +142,6 @@ void Student::setDegreeProgramPrint(string degreePrint)
 	this->degreePrint = degreePrint;
 }
 
-//void Student::setDegreeProgramPrint(DegreeProgram degreeResult)
-//{
-//	this->degreeResult = degreeResult;
-//}
-//
-//// Function specifically linked to printing DegreeProgram to console
-//void Student::getDegreeProgramPrint(DegreeProgram degree)
-//{
-//	// Converting the DegreeProgram value to a string for printing
-//	string degreeResult;
-//	switch (degree) {
-//
-//	case DegreeProgram::SECURITY:
-//		degreeResult = "SECURITY";
-//		break;
-//
-//	case DegreeProgram::NETWORK:
-//		degreeResult = "NETWORK";
-//		break;
-//
-//	case DegreeProgram::SOFTWARE:
-//		degreeResult = "SOFTWARE";
-//		break;
-//
-//	default:
-//		degreeResult = "NONE SPECIFIED";
-//		break;
-//	}
-//	this->degreePrint = degreeResult;
-//}
-
 /***** REQUIREMENT D.2.e */
 // Defining the print() function to print all fields to the console
 void Student::print()
@@ -184,9 +153,9 @@ void Student::print()
 	cout << left << "Last Name: " << setw(14) << getLastName();
 	cout << left << "Email: " << setw(27) << getEmailAddress();
 	cout << left << "Age: " << setw(6) << getAge();
-	cout << left << "Days in Course: " << getDaysToCompleteCourse();// *** Make sure that commas separate values here
-	/*cout << left << daysToCompleteCourse[1] << ", ";
-	cout << left << setw(6) << daysToCompleteCourse[2];*/
+	cout << left << "Days in Course: " << daysToCompleteCourse[0] << ", ";// *** Make sure that commas separate values here
+	cout << left << daysToCompleteCourse[1] << ", ";
+	cout << left << setw(6) << daysToCompleteCourse[2];
 	cout << left << "Degree Program: " << setw(15) << getDegreeProgramPrint() << "\n";
 }
 
