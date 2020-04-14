@@ -3,7 +3,6 @@
 #include <iomanip>
 #include "student.h"
 #include "degree.h"
-#include "roster.h"
 using std::cout;
 using std::left;
 using std::setw;
