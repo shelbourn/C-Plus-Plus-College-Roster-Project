@@ -146,7 +146,7 @@ bool Roster::remove(string studentID)
 	}
 	if (found == false)
 	{
-	cerr << "NO STUDENT RECORD WITH STUDENT ID " << studentID << " EXISTS IN THE ROSTER!!" << "\n\n";
+	cerr << "ERROR: NO STUDENT RECORD WITH STUDENT ID " << studentID << " EXISTS IN THE ROSTER!!" << "\n\n";
 	}
 	return found;
 }
@@ -170,7 +170,7 @@ void Roster::printAverageDaysInCourse(string studentID)
 		{
 			found = true;
 			int* days = classRosterArray[i]->getDaysToCompleteCourse();
-			cout << "The average number of days to complete a course for student with ID " << studentID << " is: " << days[0] + days[1] + days[2] / 3 << " days." << "\n";
+			cout << "The average number of days to complete a course for student with ID " << studentID << " is: " << (days[0] + days[1] + days[2]) / 3 << " days." << "\n";
 		}
 	}
 	if (!found) cout << "Student with ID " << studentID << " not found!" << "\n\n";
