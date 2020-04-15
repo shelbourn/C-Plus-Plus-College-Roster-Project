@@ -23,6 +23,7 @@ private:
 	int daysToCompleteCourse[numDaysArraySize];
 	DegreeProgram degree;
 	string degreePrint;
+	string degreeResult;
 
 public:
 	/***** REQUIREMENT C.2.d */
@@ -39,6 +40,7 @@ public:
 	int getAge();
 	int* getDaysToCompleteCourse();
 	DegreeProgram getDegreeProgram();
+	string getDegreeProgramPrint();
 
 	/***** REQUIREMENT D.2.b */
 	// Mutator Functions (Setters)
@@ -47,9 +49,9 @@ public:
 	void setLastName(string lastName);
 	void setEmailAddress(string emailAddress);
 	void setAge(int age);
-	void setDaysToCompleteCourse(int daysToCompleteCourse[]);
+	void setDaysToCompleteCourse(int inputDaysToCompleteCourse[]);
 	void setDegreeProgram(DegreeProgram degree);
-	void degreeProgramPrint(DegreeProgram degreePrint);
+	void setDegreeProgramPrint(string degreePrint);
 
 	/***** REQUIREMENT D.2.e */
 	// Print function to print specific student data to console

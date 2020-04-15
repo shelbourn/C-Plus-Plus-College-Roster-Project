@@ -30,7 +30,7 @@ Student::Student(string studentID, string firstName, string lastName, string ema
 	this->emailAddress = emailAddress;
 	this->age = age;
 	for (int i = 0; i < numDaysArraySize; i++) this->daysToCompleteCourse[i] = daysToCompleteCourse[i];
-	this->degree = degree; /*Sub-Class??? Or Enum Array???*/
+	this->degree = degree;
 }
 
 /***** REQUIREMENT D.2.a */
@@ -70,6 +70,31 @@ DegreeProgram Student::getDegreeProgram()
 	return degree;
 }
 
+string Student::getDegreeProgramPrint()
+{
+	// Converting the DegreeProgram enum value to a string for printing
+	string degreePrint;
+	switch (degree) {
+
+	case DegreeProgram::SECURITY:
+		degreePrint = "SECURITY";
+		break;
+
+	case DegreeProgram::NETWORK:
+		degreePrint = "NETWORK";
+		break;
+
+	case DegreeProgram::SOFTWARE:
+		degreePrint = "SOFTWARE";
+		break;
+
+	default:
+		degreePrint = "NONE SPECIFIED";
+		break;
+	}
+	return degreePrint;
+}
+
 /***** REQUIREMENT D.2.b */
 // Defining Setter Functions
 void Student::setStudentID(string studentID)
@@ -100,7 +125,9 @@ void Student::setAge(int age)
 void Student::setDaysToCompleteCourse(int daysToCompleteCourse[])
 {
 	for (int i = 0; i < numDaysArraySize; i++)
+	{
 		this->daysToCompleteCourse[i] = daysToCompleteCourse[i];
+	}
 }
 
 void Student::setDegreeProgram(DegreeProgram degree)
@@ -108,47 +135,24 @@ void Student::setDegreeProgram(DegreeProgram degree)
 	this->degree = degree;
 }
 
-// Function specifically linked to printing DegreeProgram to console
-void Student::degreeProgramPrint(DegreeProgram degree)
+void Student::setDegreeProgramPrint(string degreePrint)
 {
-	// Converting the DegreeProgram value to a string for printing
-	string degreeResult;
-	switch (degree) {
-
-	case DegreeProgram::SECURITY:
-		degreeResult = "SECURITY";
-		break;
-
-	case DegreeProgram::NETWORK:
-		degreeResult = "NETWORK";
-		break;
-
-	case DegreeProgram::SOFTWARE:
-		degreeResult = "SOFTWARE";
-		break;
-
-	default:
-		degreeResult = "NONE SPECIFIED";
-		break;
-	}
-	this->degreePrint = degreeResult;
+	this->degreePrint = degreePrint;
 }
 
 /***** REQUIREMENT D.2.e */
 // Defining the print() function to print all fields to the console
 void Student::print()
 {
-	degreeProgramPrint(degree);
-
-	cout << left << "ID: " << setw(6) << studentID;
-	cout << left << "First Name: " << setw(12) << firstName;
-	cout << left << "Last Name: " << setw(14) << lastName;
-	cout << left << "Email: " << setw(27) << emailAddress;
-	cout << left << "Age: " << setw(6) << age;
-	cout << left << "Days in Course: " << daysToCompleteCourse[0] << ", "; // *** Make sure that commas separate values here
-	cout << left << daysToCompleteCourse[1] << ", ";
-	cout << left << setw(6) << daysToCompleteCourse[2];
-	cout << left << "Degree Program: " << setw(15) << degreePrint << "\n";
+	cout << left << "ID: " << setw(6) << getStudentID();
+	cout << left << "First Name: " << setw(12) << getFirstName();
+	cout << left << "Last Name: " << setw(14) << getLastName();
+	cout << left << "Email: " << setw(27) << getEmailAddress();
+	cout << left << "Age: " << setw(6) << getAge();
+	cout << left << "Days in Course: " << getDaysToCompleteCourse()[0] << ", ";// *** Make sure that commas separate values here
+	cout << left << getDaysToCompleteCourse()[1] << ", ";
+	cout << left << setw(6) << getDaysToCompleteCourse()[2];
+	cout << left << "Degree Program: " << setw(15) << getDegreeProgramPrint() << "\n";
 }
 
 // Defining the destructor function for Student
