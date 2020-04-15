@@ -41,7 +41,6 @@ public:
 	int* getDaysToCompleteCourse();
 	DegreeProgram getDegreeProgram();
 	string getDegreeProgramPrint();
-	/*string getDegreeProgramPrint(DegreeProgram degreePrint);*/
 
 	/***** REQUIREMENT D.2.b */
 	// Mutator Functions (Setters)
@@ -50,10 +49,9 @@ public:
 	void setLastName(string lastName);
 	void setEmailAddress(string emailAddress);
 	void setAge(int age);
-	void setDaysToCompleteCourse(int daysToCompleteCourse[]);
+	void setDaysToCompleteCourse(int inputDaysToCompleteCourse[]);
 	void setDegreeProgram(DegreeProgram degree);
 	void setDegreeProgramPrint(string degreePrint);
-	/*void setDegreeProgramPrint();*/
 
 	/***** REQUIREMENT D.2.e */
 	// Print function to print specific student data to console

@@ -92,7 +92,6 @@ string Student::getDegreeProgramPrint()
 		degreePrint = "NONE SPECIFIED";
 		break;
 	}
-
 	return degreePrint;
 }
 
@@ -145,16 +144,14 @@ void Student::setDegreeProgramPrint(string degreePrint)
 // Defining the print() function to print all fields to the console
 void Student::print()
 {
-	/*degreeProgramPrint(degree);*/
-
 	cout << left << "ID: " << setw(6) << getStudentID();
 	cout << left << "First Name: " << setw(12) << getFirstName();
 	cout << left << "Last Name: " << setw(14) << getLastName();
 	cout << left << "Email: " << setw(27) << getEmailAddress();
 	cout << left << "Age: " << setw(6) << getAge();
-	cout << left << "Days in Course: " << daysToCompleteCourse[0] << ", ";// *** Make sure that commas separate values here
-	cout << left << daysToCompleteCourse[1] << ", ";
-	cout << left << setw(6) << daysToCompleteCourse[2];
+	cout << left << "Days in Course: " << getDaysToCompleteCourse()[0] << ", ";// *** Make sure that commas separate values here
+	cout << left << getDaysToCompleteCourse()[1] << ", ";
+	cout << left << setw(6) << getDaysToCompleteCourse()[2];
 	cout << left << "Degree Program: " << setw(15) << getDegreeProgramPrint() << "\n";
 }
 
